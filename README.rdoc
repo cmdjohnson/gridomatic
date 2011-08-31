@@ -1,32 +1,101 @@
 = gridomatic
 
-* http://github.com/#{github_username}/#{project_name}
+* http://github.com/cmdjohnson/gridomatic
 
 == DESCRIPTION:
 
-FIX (describe your package)
+Easy floatable grid structures for Rails.
 
-== FEATURES/PROBLEMS:
+Don't have too much data to display but still need to fill up that screen?
 
-* FIX (list of features or problems)
+Why don't you present your data in a grid of boxes. Provided you color them right, boxes are very easy to the eyes because the mind understands its structure. Add to that custom coloring, (e.g. each controller can have its own color) background images and clickable boxes and you have a navigation that is not only great looking, but is also very easy to use on touchpad-enabled devices such as an iPad.
+
+This is what it looks like:
+http://github.com/cmdjohnson/gridomatic/screenshots/overview.png
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+A simple box with heading
+
+ = render_box :heading => "foo" do
+  - "bar"
+
+Screenshot: http://github.com/cmdjohnson/gridomatic/screenshots/single-box.png
+
+Create a clickable box (no heading this time):
+
+ - link_to "http://www.example.com/" do
+  = render_box do
+   - "bar"
+  
+Create a bunch of boxes that all look the same, except for one
+
+ - array = Array.new(7)
+ - array[5] = { :heading => "wrong, ", :content => "i feel different", :heading_color => "red", :background_color => "orange", :link => "http://www.google.com/" }
+ = render_boxes array, :template => { :float_left => true, :heading => "same", :content => "stuff every day" }
+
+Screenshot: http://github.com/cmdjohnson/gridomatic/screenshots/multi-box-with-override.png
+
+The render_box method accepts the following options:
+
+  # options:
+  # - content (string)
+  # - heading (string)
+  # - float_left (true/false)
+  # - text_align_center (true/false)
+  # - highlight (true/false)
+  # - background_image (url)
+  # - bigfont (true/false)
+  # - heading_color (color name, e.g. 'red')
+  # - background_color (color name, e.g. 'blue')
+  # - inner_div_style (css style, e.g. "width: 382px; height: 281px;")
+  # - outer_div_style (same)
+  # - heading_style (same)
+  # - height (css style unit, e.g. "100px" or "6em")
+  # - solid_background (true/false)
+  
+You can wrap an <a> tag around the box and it will have a:hover CSS enabled, e.g.
+  # - link_to "http://www.example.com/" do
+  #  = render_box do
+  #   - "bar"
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+Rails 2.3 or above, tested with 2.3.12.
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+ sudo gem install gridomatic
+
+== LIMITATIONS:
+
+Unfortunately, you cannot use multiple lines to concatenate them. For instance, 
+
+ - link_to "http://www.example.com/" do
+  = render_box do
+   - "foo"
+   - "bar"
+   - "baz" 
+
+ => "baz"
+
+Will always return "baz" because that's the return value. This is against HAML's idea that you should be able to concatenate anything you put right underneath each other. Ruby blocks simply have a single return value and, as far as I know, are not aware of the difference between "foo" "bar" "baz" or "baz" -- they will only see "baz".
+
+== OTHER NOTES:
+
+In this description, I've used HAML examples for the view, but this ofcourse depends on your own preference. In ERB, a simple box would be rendered as such:
+
+ <%= render_box :heading => "foo" do %>
+  <%- "bar" %>
+ <%- end %>
+
+Don't forget the 'end' tag which is required by ERB.
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2011 FIXME full name
+Copyright (c) 2011 Commander Johnson <commanderjohnson@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

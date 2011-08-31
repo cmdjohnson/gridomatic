@@ -3,6 +3,8 @@ Manifest.txt
 PostInstall.txt
 README.rdoc
 Rakefile
+app/helpers/gridomatic_helper.rb
+public/stylesheets/gridomatic.css
 lib/gridomatic.rb
 script/console
 script/destroy

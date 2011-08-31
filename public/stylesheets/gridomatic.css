@@ -1,0 +1,209 @@
+/* ========================================================================= */
+/* begin gridomatic */
+/* ========================================================================= */
+
+/*
+Text Boxes
+
+supported heading colors:
+
+(use textbox_*, e.g. textbox_red)
+
+red
+green
+yellow
+cyan
+orange
+purple
+white
+
+supported background colors:
+
+(use *_background, e.g. blue_background)
+
+blue
+red
+green
+yellow
+cyan
+orange
+purple
+white
+*/
+
+/* text box */
+
+div.textbox
+{
+    /* steal green color from wikipedia */
+    background-color: #f5faff;
+    /* steal border from wikipedia */
+    border:1px solid #cef2e0;
+    width: 200px;
+    height: 200px;
+    padding: 0.5em;
+    margin: 0.5em;
+
+    opacity:0.8;filter:alpha(opacity=80);
+}
+
+div.solid_background
+{
+    /* steal green color from wikipedia */
+    background-color: #f5faff;
+    /* steal border from wikipedia */
+    border:1px solid #cef2e0;
+    /* opacity */
+    opacity:0.95;filter:alpha(opacity=95);
+}
+
+/* hyperlinked text boxes */
+
+/* we want a clickable text box to be different than a non-clickable one. */
+
+a div.textbox
+{
+    border: 1px solid #777777;
+}
+
+a:hover div.textbox
+{
+    background-color: #c5e2ff;
+    border: 1px solid #aaaaaa;
+
+    opacity:1.0;filter:alpha(opacity=100);
+}
+
+/* heading */
+
+div.textbox p.heading
+{
+    color: black;
+    font-size: 130%;
+    font-weight: bold;
+    padding: 0.4em;
+    margin-top: 0.3em;
+    margin-bottom: 0;
+    border: 1px solid gray;
+    background-color: #afc6e9;
+}
+
+/* heading colors */
+
+div.textbox_red p.heading
+{
+    background-color: #ffaaaa;
+}
+
+div.textbox_green p.heading
+{
+    background-color: #ccffaa;
+}
+
+div.textbox_yellow p.heading
+{
+    background-color: #fff5aa;
+}
+
+div.textbox_cyan p.heading
+{
+    background-color: #aafeff;
+}
+
+div.textbox_orange p.heading
+{
+    background-color: #ffca3a;
+}
+
+div.textbox_purple p.heading
+{
+    background-color: #ffc0f0;
+}
+
+div.textbox_white p.heading
+{
+    background-color: white;
+}
+
+/* backgrounds */
+
+div.textbox.blue_background
+{
+    background-color: #afc6e9;
+}
+
+div.textbox.red_background
+{
+    background-color: #ffaaaa;
+}
+
+div.textbox.green_background
+{
+    background-color: #ccffaa;
+}
+
+div.textbox.yellow_background
+{
+    background-color: #fff5aa;
+}
+
+div.textbox.cyan_background
+{
+    background-color: #aafeff;
+}
+
+div.textbox.orange_background
+{
+    background-color: #ffca3a;
+}
+
+div.textbox.purple_background
+{
+    background-color: #ffc0f0;
+}
+
+div.textbox.white_background
+{
+    background-color: #ffc0f0;
+}
+
+/* highlight */
+
+div.textbox.highlight
+{
+    border: 1px solid #000000;
+}
+
+/* dings */
+
+.float_left
+{
+    float: left;
+}
+
+.text_align_center
+{
+    text-align: center;
+}
+
+.bigfont
+{
+    font-size: 130%;
+}
+
+.clear_both
+{
+    clear: both;
+}
+
+/* this class makes sure your text links contained by text boxes won't get underlined */
+/* it's a workaround :( */
+
+a.no_underline:hover
+{
+    text-decoration: none;
+}
+
+/* ========================================================================= */
+/* end gridomatic */
+/* ========================================================================= */
