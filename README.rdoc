@@ -11,7 +11,7 @@ Don't have too much data to display but still need to fill up that screen?
 Why don't you present your data in a grid of boxes. Provided you color them right, boxes are very easy to the eyes because the mind understands its structure. Add to that custom coloring, (e.g. each controller can have its own color) background images and clickable boxes and you have a navigation that is not only great looking, but is also very easy to use on touchpad-enabled devices such as an iPad.
 
 This is what it looks like:
-http://github.com/cmdjohnson/gridomatic/screenshots/overview.png
+https://github.com/cmdjohnson/gridomatic/blob/master/screenshots/overview.png
 
 == SYNOPSIS:
 
@@ -20,7 +20,7 @@ A simple box with heading
  = render_box :heading => "foo" do
   - "bar"
 
-Screenshot: http://github.com/cmdjohnson/gridomatic/screenshots/single-box.png
+Screenshot: https://github.com/cmdjohnson/gridomatic/blob/master/screenshots/single-box.png
 
 Create a clickable box (no heading this time):
 
@@ -34,7 +34,7 @@ Create a bunch of boxes that all look the same, except for one
  - array[5] = { :heading => "wrong, ", :content => "i feel different", :heading_color => "red", :background_color => "orange", :link => "http://www.google.com/" }
  = render_boxes array, :template => { :float_left => true, :heading => "same", :content => "stuff every day" }
 
-Screenshot: http://github.com/cmdjohnson/gridomatic/screenshots/multi-box-with-override.png
+Screenshot: https://github.com/cmdjohnson/gridomatic/blob/master/screenshots/multi-box-with-override.png
 
 The render_box method accepts the following options:
 
