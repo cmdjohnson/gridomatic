@@ -99,6 +99,9 @@ In this description, I've used HAML examples for the view, but this ofcourse dep
 
 Don't forget the 'end' tag which is required by ERB.
 
+Release blob:
+http://rubyonrailsdeveloper.nl/gridomatic-0-0-1-released/
+
 == LICENSE:
 
 (The MIT License)
