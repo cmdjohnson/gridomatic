@@ -65,7 +65,15 @@ Rails 2.3 or above, tested with 2.3.12.
 
 == INSTALL:
 
- sudo gem install gridomatic
+Copy the file gridomatic_helper.rb to your app/helpers folder and copy gridomatic.css to your public/stylesheets folder.
+
+You need to reference the gridomatic.css in your application layout, i.e. app/views/layouts/application.html.erb:
+
+<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/gridomatic.css" />
+
+The reference must be placed within the <head> section.
+
+There is a gem version available, but I don't even use it.
 
 == LIMITATIONS:
 
