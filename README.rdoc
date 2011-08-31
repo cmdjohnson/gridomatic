@@ -69,7 +69,7 @@ Copy the file gridomatic_helper.rb to your app/helpers folder and copy gridomati
 
 You need to reference the gridomatic.css in your application layout, i.e. app/views/layouts/application.html.erb:
 
-<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/gridomatic.css" />
+ <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/gridomatic.css" />
 
 The reference must be placed within the <head> section.
 
